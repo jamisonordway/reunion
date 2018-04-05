@@ -8,7 +8,7 @@ class Activity
   def initialize(name, cost)
     @name = name
     @cost = cost
-    @participants = {}
+    @participants = {"Gretchen"=>50}
   end
 
   def add_participant(name, amount_paid)

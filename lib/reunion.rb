@@ -16,12 +16,22 @@ class Reunion
     @participants = new_activity.participants
   end
 
+  def add_participant
+    
+  end
+
+  def number_of_participants
+    names_of_participants = []
+    names_of_participants << @participants.keys
+    return names_of_participants.length
+  end
+
   def sum_activity_costs
     @activities.values.sum
   end
 
   def split_total_cost
-    sum_activity_costs 
+    sum_activity_costs / number_of_participants
   end
 
 end

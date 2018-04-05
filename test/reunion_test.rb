@@ -36,11 +36,10 @@ class ReunionTest < Minitest::Test
   end
 
   def test_it_can_split_total_cost
-    skip
     @reunion.add_activity("Skiing", 200)
     @reunion.add_activity("Snowboarding", 200)
 
-    assert_equal 100, @reunion.split_total_cost
+    assert_equal 400, @reunion.split_total_cost
   end
 
   def test_it_can_print_what_participants_owe
