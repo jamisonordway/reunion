@@ -3,6 +3,7 @@ require 'minitest/test'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/reunion'
+require './lib/activity'
 require 'pry'
 
 class ReunionTest < Minitest::Test
@@ -24,6 +25,21 @@ class ReunionTest < Minitest::Test
     @reunion.add_activity("Snowboarding", 200)
     expected = {"Skiing"=>200, "Snowboarding"=>200}
     assert_equal expected, @reunion.activities
+  end
+
+  def test_it_can_sum_cost_of_activities
+    @reunion.add_activity("Snowboarding", 200)
+    assert_equal 400, @reunion.sum_activity_costs
+  end
+
+  def test_it_can_split_total_cost
+    @reunion.add_activity("Snowboarding", 200)
+    assert_equal 100, @reunion.split_total_cost
+  end
+
+  def test_it_can_print_what_participants_owe
+    @reunion.add_activity("Snowboarding", 200)
+    assert_equal "Shaun owes 45.", @reunion.who_owes
   end
 
 end
