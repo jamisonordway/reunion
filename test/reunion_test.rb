@@ -21,8 +21,9 @@ class ReunionTest < Minitest::Test
   end
 
   def test_activities_can_be_added
+    @reunion.add_activity("Snowboarding", 200)
     expected = {"Skiing"=>200, "Snowboarding"=>200}
-    assert_equal expected, @reunion.add_activity("Snowboarding", 200)
+    assert_equal expected, @reunion.activities
   end
 
 end
