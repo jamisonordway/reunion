@@ -36,4 +36,15 @@ class Activity
     end
   end
 
+  def who_is_owed
+    name = @participants.keys
+    paid = @participants.values
+    @participants.each do |name, paid|
+    if paid > split_cost(number_of_participants)
+      owed = paid - split_cost(number_of_participants)
+      return "#{name} is owed #{owed}."
+      end
+    end
+  end
+
 end

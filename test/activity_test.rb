@@ -51,7 +51,12 @@ class ActivityTest < Minitest::Test
   end
 
   def test_it_can_calculate_who_is_owed
-    skip
+    @activity.add_participant("Shaun", 5)
+    @activity.add_participant("Hannah", 95)
+    @activity.add_participant("Scotty", 50)
+    @activity.add_participant("Shannon", 50)
+
+    assert_equal "Hannah is owed 45.", @activity.who_is_owed
   end
 
 end
