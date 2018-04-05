@@ -24,7 +24,7 @@ class ActivityTest < Minitest::Test
 
   def test_it_can_add_participants
     @activity.add_participant("Shaun", 50)
-    expected = {"Shaun" => 50}
+    expected = {"Shaun"=>50}
     assert_equal expected, @activity.participants
   end
 

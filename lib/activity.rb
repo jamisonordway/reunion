@@ -10,7 +10,7 @@ class Activity
   end
 
   def add_participant(name, amount_paid)
-    
+    @participants[name] = amount_paid
   end
 
 end
