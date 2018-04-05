@@ -47,7 +47,7 @@ class ActivityTest < Minitest::Test
     @activity.add_participant("Scotty", 50)
     @activity.add_participant("Shannon", 50)
 
-    assert_equal "Shaun owes 45", @activity.who_owes
+    assert_equal "Shaun owes 45.", @activity.who_owes
   end
 
   def test_it_can_calculate_who_is_owed

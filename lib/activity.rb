@@ -21,8 +21,19 @@ class Activity
   end
 
   def split_cost(number_of_participants)
-    each_owe = @cost / number_of_participants
-    each_owe
+    cost_for_each = @cost / number_of_participants
+    cost_for_each
+  end
+
+  def who_owes
+      name = @participants.keys
+      paid = @participants.values
+      @participants.each do |name, paid|
+      if paid < split_cost(number_of_participants)
+        owes = split_cost(number_of_participants) - paid
+        return "#{name} owes #{owes}."
+      end
+    end
   end
 
 end
