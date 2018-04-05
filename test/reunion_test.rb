@@ -17,28 +17,36 @@ class ReunionTest < Minitest::Test
   end
 
   def test_it_has_activities
-    expected = {"Skiing"=>200}
+    expected = {}
     assert_equal expected, @reunion.activities
   end
 
   def test_activities_can_be_added
+    @reunion.add_activity("Skiing", 200)
     @reunion.add_activity("Snowboarding", 200)
     expected = {"Skiing"=>200, "Snowboarding"=>200}
     assert_equal expected, @reunion.activities
   end
 
   def test_it_can_sum_cost_of_activities
+    @reunion.add_activity("Skiing", 200)
     @reunion.add_activity("Snowboarding", 200)
+
     assert_equal 400, @reunion.sum_activity_costs
   end
 
   def test_it_can_split_total_cost
+    skip
+    @reunion.add_activity("Skiing", 200)
     @reunion.add_activity("Snowboarding", 200)
+
     assert_equal 100, @reunion.split_total_cost
   end
 
   def test_it_can_print_what_participants_owe
+    skip
     @reunion.add_activity("Snowboarding", 200)
+
     assert_equal "Shaun owes 45.", @reunion.who_owes
   end
 

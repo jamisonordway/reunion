@@ -6,12 +6,14 @@ class Reunion
 
   def initialize(location)
     @location = location
-    @activities = {"Skiing"=>200}
+    @activities = {}
+    @participants = {}
   end
 
   def add_activity(name, cost)
     new_activity = Activity.new(name, cost)
     @activities[new_activity.name] = new_activity.cost
+    @participants = new_activity.participants
   end
 
   def sum_activity_costs
@@ -19,12 +21,7 @@ class Reunion
   end
 
   def split_total_cost
-    sum_activity_costs / 
+    sum_activity_costs 
   end
-
-  def who_owes
-
-  end
-
 
 end
